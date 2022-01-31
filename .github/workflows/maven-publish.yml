@@ -32,7 +32,7 @@ jobs:
         java -cp target/classes com.mycompany.app.App
         
     - name: Create artificat
-      uses: action/upload-artifact@v2
+      uses: actions/upload-artifact@v2
       with:
          name: hello-ronen-artifact
          path: staging
