@@ -1,13 +1,12 @@
 # This workflow will build a Java project with Maven, and cache/restore any dependencies to improve the workflow execution time
 # For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
 
-name: Java CI with Maven
+name: Hello Ronen Bar Maven
 
 on:
   push:
     branches: [ master ]
-  pull_request:
-    branches: [ master ]
+ 
 
 jobs:
   build:
@@ -27,8 +26,14 @@ jobs:
         mvn -B package --file my-app/pom.xml
         cd my-app
         mkdir staging && cp target/*.jar staging
-    - name: see the  results by ls -a
+    - name: RUN THE JAR 
       run: |
         cd my-app
         java -cp target/classes com.mycompany.app.App
+        
+    - name: Create artificat
+      uses: action/upload-artifact@v2
+      with:
+         name: hello-ronen-artifact
+         path: staging
         
