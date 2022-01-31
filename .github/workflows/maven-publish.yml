@@ -27,4 +27,5 @@ jobs:
         mvn -B package --file my-app/pom.xml
         cd my-app
         mkdir staging && cp target/*.jar staging
-        ls -a
+    - name: see the  results by ls -a
+      run: ls -a
