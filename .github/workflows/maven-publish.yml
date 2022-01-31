@@ -25,4 +25,5 @@ jobs:
     - name: Build with Maven
       run: |
         mvn -B package --file my-app/pom.xml
+        cd my-app
         mkdir staging && cp target/*.jar staging
