@@ -28,4 +28,7 @@ jobs:
         cd my-app
         mkdir staging && cp target/*.jar staging
     - name: see the  results by ls -a
-      run: ls -a
+      run: |
+        cd my-app
+        cd target
+        ls -a
