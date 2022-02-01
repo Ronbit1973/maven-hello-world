@@ -33,6 +33,7 @@ jobs:
       run: |
         cd my-app
         java -cp target/classes com.mycompany.app.App
+        ls
         
     - name: Create artificat
       uses: actions/upload-artifact@v2
