@@ -24,7 +24,7 @@ jobs:
     - name: Build with Maven
       run: |
         cd my-app
-        mvn release:update-versions
+     
         mvn -B package --file pom.xml
         
         # cd my-app
