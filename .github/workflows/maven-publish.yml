@@ -24,7 +24,7 @@ jobs:
     - name: Build with Maven
       run: |
         cd my-app
-         bash increment-pom-versions.sh
+      
         mvn -B package --file pom.xml
         
         # cd my-app
