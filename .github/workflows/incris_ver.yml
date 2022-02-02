@@ -28,8 +28,8 @@ jobs:
         mvn versions:set -DnewVersion=1.0.9
         git config --global user.name 'ronbit1973'
         git diff --staged --name-status
-        git add
-        git commit
+        git add pom.xml
+        git commit -a
        
         
       
