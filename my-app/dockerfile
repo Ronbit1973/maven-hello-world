@@ -1,0 +1,15 @@
+FROM alpine:latest AS builder
+RUN apk add openjdk8-jre
+COPY . /src/java
+WORKDIR /src/java
+
+ENV SERVICE_NAME="my-service"
+
+RUN addgroup --gid 1001 -S $SERVICE_NAME && \
+    adduser -G $SERVICE_NAME --shell /bin/false --disabled-password -H --uid 1001 $SERVICE_NAME && \
+    mkdir -p /var/log/$SERVICE_NAME && \
+    chown $SERVICE_NAME:$SERVICE_NAME /var/log/$SERVICE_NAME
+
+
+USER $SERVICE_NAME
+ENTRYPOINT java -jar /src/java/my-app-1.0.0.jar
