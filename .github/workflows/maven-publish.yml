@@ -49,9 +49,9 @@ jobs:
               MyJar=$eachfile
             done
             Docker_ver=${MyJar:7:5}
-
+            docker build ./my-app ronbit/ronen-test:${Docker_ver}
            
            
-            echo $Docker_ver
+           
             
         
