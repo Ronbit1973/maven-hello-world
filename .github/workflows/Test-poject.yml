@@ -36,7 +36,7 @@ jobs:
         cd my-app
         git add pom.xml
         git commit -am "Upadte POM"
-        git push origin master
+        git push -f origin master
          
    
     - name: RUN THE JAR 
