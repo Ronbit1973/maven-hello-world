@@ -24,7 +24,7 @@ jobs:
     - name: Build with Maven
       run: |
         cd my-app
-        mvn release:update-versions
+        mvn --batch-mode release:update-versions -DdevelopmentVersion=1.2.0-SNAPSHOT
       
         
         
