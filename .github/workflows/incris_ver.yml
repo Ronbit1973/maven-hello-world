@@ -24,9 +24,8 @@ jobs:
     - name: Build with Maven
       run: |
         cd my-app
-        mvn release:update-versions -DautoVersionSubmodules=true
-        mvn --batch-mode release:update-versions -DdevelopmentVersion=1.2.0-SNAPSHOT
-        mvn versions:commit
+        VERSION = mvn git-commit-id:revision help:evaluate -Dexpression=project.version | grep -E '^[0-9.]+'
+        echo $VERSION
         
       
         
