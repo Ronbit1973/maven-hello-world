@@ -24,7 +24,7 @@ jobs:
     - name: Build with Maven
       run: |
         cd my-app
-        mvn versions:set -DnewVersion=1.0.5
+        mvn build-helper:parse-version help:effective-pom
       
         
         
