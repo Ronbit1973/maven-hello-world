@@ -24,8 +24,8 @@ jobs:
     - name: Build with Maven
       run: |
         cd my-app
-        VERSION = mvn git-commit-id:revision help:evaluate -Dexpression=project.version | grep -E '^[0-9.]+'
-        echo $VERSION
+        mvn --batch-mode --update-snapshots verify
+       
         
       
         
