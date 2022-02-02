@@ -33,7 +33,7 @@ jobs:
       run: |
         git config --global user.name 'ronbit1973'
         git diff --staged --name-status
-        ls -a
+        cd my-app
         git add pom.xml
         git commit -am "Upadte POM"
         git push origin master
