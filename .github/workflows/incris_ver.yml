@@ -26,6 +26,8 @@ jobs:
         cd my-app
         mvn release:update-versions -DautoVersionSubmodules=true
         mvn --batch-mode release:update-versions -DdevelopmentVersion=1.2.0-SNAPSHOT
+        mvn versions:commit
+        
       
         
         
