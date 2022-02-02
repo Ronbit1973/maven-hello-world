@@ -1,6 +1,6 @@
 FROM alpine:latest AS builder
 RUN apk add openjdk8-jre
-COPY . /src/java
+COPY ./staging /src/java
 WORKDIR /src/java
 
 ENV SERVICE_NAME="my-service"
