@@ -27,7 +27,8 @@ jobs:
       
         mvn versions:set -DnewVersion=1.0.9
       
-        git diff --staged --name-status     
+        git diff --staged --name-status
+        git commit
        
         
       
