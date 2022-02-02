@@ -24,12 +24,25 @@ jobs:
     - name: Build with Maven
       run: |
         cd my-app
+        mvn -B package --file pom.xml
+        mvn release:update-versions
         mkdir staging && cp target/*.jar staging
+   
+   
+    - name: Update POM FILE
+      run: |
+        git config --global user.name 'ronbit1973'
+        git diff --staged --name-status
+        git add pom.xml
+        git commit -am "Upadte POM"
+        git push origin master
+         
+   
     - name: RUN THE JAR 
       run: |
         cd my-app
         java -cp target/classes com.mycompany.app.App
-        ls
+        
     - name: docker login 
       env:
          DOCKER_USER: ${{ secrets.DOCKER_USER}}
@@ -44,7 +57,7 @@ jobs:
          path: my-app/staging
     - name: Docker Build by Bash
       run: |
-            mvn release:update-versions
+            
             cd  my-app/staging
             GetJarName=`ls *.jar`
             for eachfile in $GetJarName
@@ -57,11 +70,7 @@ jobs:
             docker push ronbit/ronen-test:${Docker_ver}    
           
        
-        git config --global user.name 'ronbit1973'
-        git diff --staged --name-status
-        git add pom.xml
-        git commit -am "Upadte POM"
-        git push origin master
+        
        
         
       
