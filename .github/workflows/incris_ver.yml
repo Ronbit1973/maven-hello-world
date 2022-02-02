@@ -24,10 +24,10 @@ jobs:
     - name: Build with Maven
       run: |
         cd my-app
-        mvn release:update-versions
-       
       
-       
+        mvn versions:set -DnewVersion=1.0.9
+      
+        cat pom.xml     
        
         
       
