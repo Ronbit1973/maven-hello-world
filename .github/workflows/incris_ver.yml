@@ -27,7 +27,7 @@ jobs:
       
         mvn versions:set -DnewVersion=1.0.9
       
-        cat pom.xml     
+        git diff --staged --name-status     
        
         
       
