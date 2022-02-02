@@ -42,7 +42,13 @@ jobs:
          path: my-app/staging
     - name: Docker Build by Bash
       run: |
-            cd my-app
-            ls -a
+            cd  my-app/staging
+            GetJarName=`ls *.jar`
+            for eachfile in $GetJarName
+            do
+              MyJar=$eachfile
+            done
+            echo $MyJar
+
             
         
