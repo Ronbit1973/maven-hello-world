@@ -43,6 +43,10 @@ jobs:
     - name: Docker Build by Bash
       run: |
             cd my-app
-            batsh Docker_Build.sh
+            for eachfile in $GetJarName
+            do
+               MyJar=$eachfile
+            done
+            echo $MyJar
             
         
