@@ -48,7 +48,10 @@ jobs:
             do
               MyJar=$eachfile
             done
-            echo $MyJar
+            Docker_ver=${MyJar:7:5}
 
+           
+           
+            echo $Docker_ver
             
         
