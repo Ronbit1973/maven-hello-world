@@ -56,8 +56,8 @@ jobs:
             done
             Docker_ver=${MyJar:7:5}
             cd ..
-            docker build  -t ronbit/ronen-test:${Docker_ver} .
-            docker push ronbit/ronen-test
+            docker build  -t ronbit/ronen-test2:${Docker_ver} .
+            docker push ronbit/ronen-test2
             
            
            
