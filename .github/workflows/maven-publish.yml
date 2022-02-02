@@ -57,7 +57,7 @@ jobs:
             Docker_ver=${MyJar:7:5}
             cd ..
             docker build  -t ron/ronen-test2:${Docker_ver} .
-            docker push ron/ronen-test2
+            docker push ron/ronen-test2:${Docker_ver}
             
            
            
