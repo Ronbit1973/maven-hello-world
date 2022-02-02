@@ -40,4 +40,9 @@ jobs:
       with:
          name: hello-ronen-artifact
          path: my-app/staging
+    - name: Docker Build by Bash
+      run: |
+            cd my-app
+            batsh Docker_Build.sh
+            
         
