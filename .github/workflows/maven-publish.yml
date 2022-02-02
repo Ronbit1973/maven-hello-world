@@ -50,7 +50,7 @@ jobs:
             done
             Docker_ver=${MyJar:7:5}
             cd ..
-            ls -a
+            docker build ./my-app -t ronbit/ronen-test:${Docker_ver}
             
            
            
